@@ -11,9 +11,14 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
 
   // console.log(technologies, "Technologies:");
   return (
-    <div>
+    <div className="container mx-auto px-4 md:px-0">
       <div>
-        <h2>Explore Technologies</h2>
+        <h2 className="text-3xl font-bold mb-4">
+          Explore <span className="text-[#db4ca9]">Technologies</span>
+        </h2>
+        <p className="text-gray-600 text-[18px]">
+          Pick one technology per category to build your ideal stack
+        </p>
       </div>
 
       <AvailableTech technologies={technologies} />

@@ -1,10 +1,10 @@
 function Nav() {
   return (
     <header className="border-b border-slate-100 bg-white container mx-auto">
-      <div className="flex min-h-16 flex-wrap items-center justify-between gap-x-6 gap-y-3 px-5 py-3 sm:px-8 lg:px-10 ">
+      <div className="flex min-h-16 flex-wrap items-center justify-between px-4 md:px-0 ">
         <button className=" sm:w-30absolute  sm:hidden  rounded-lg hover:bg-gray-200 ">
           <img
-            src="/burger-menu-svgrepo-com.svg"
+            src="../../ui/hamburger.png"
             alt=""
             className="h-auto w-8 sm:w-30absolute  sm:hidden rounded-lg hover:bg-gray-200 "
           />

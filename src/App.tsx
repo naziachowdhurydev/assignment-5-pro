@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Nav from "./component/nav.tsx";
+import Banner from "./component/banner.tsx";
 import Technologies from "./component/technologies/Technologies.tsx";
 import { Itechnology } from "./types/technologyType.ts";
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <div>
       <Nav />
+      <Banner />
       <Suspense fallback={<div>Loading...</div>}>
         <Technologies technologiesPromise={technologiesPromise} />
       </Suspense>
