@@ -1,0 +1,25 @@
+import { Suspense } from "react";
+import Nav from "./component/nav.tsx";
+import Technologies from "./component/technologies/Technologies.tsx";
+import { Itechnology } from "./types/technologyType.ts";
+
+const technologiesFetch = async (): Promise<Itechnology[]> => {
+  const res = await fetch("/data.json");
+  const data = await res.json();
+  return data;
+};
+
+function App() {
+  // console.log("technologiesFetch", technologiesFetch);
+  const technologiesPromise = technologiesFetch();
+  return (
+    <div>
+      <Nav />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Technologies technologiesPromise={technologiesPromise} />
+      </Suspense>
+    </div>
+  );
+}
+
+export default App;
