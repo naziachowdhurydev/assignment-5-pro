@@ -20,7 +20,13 @@ function App() {
     <div>
       <Nav />
       <Banner />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="text-left font-bold text-amber-950 container mx-auto px-4 md:px-0">
+            Data is Loading... please wait for a moment.........
+          </div>
+        }
+      >
         <Technologies technologiesPromise={technologiesPromise} />
       </Suspense>
       <Footer />
