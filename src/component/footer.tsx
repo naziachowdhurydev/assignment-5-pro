@@ -1,14 +1,12 @@
+const logoText = new URL("../assets/logo-text.png", import.meta.url).href;
+
 const Footer = () => {
   return (
     <footer className="mt-20 border-t border-slate-100">
       <div className="container mx-auto px-4 py-12 md:px-0 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-12">
           <div>
-            <img
-              src="/src/assets/logo-text.png"
-              alt="Dev Stack"
-              className="h-auto w-32"
-            />
+            <img src={logoText} alt="Dev Stack" className="h-auto w-32" />
             <p className="mt-5 max-w-sm text-sm leading-5 text-slate-500">
               Curated tools, technologies, and resources for developers building
               modern software.

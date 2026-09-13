@@ -1,20 +1,19 @@
+const hamBurger = new URL("../../ui/hamburger.png", import.meta.url).href;
+const logoText = new URL("../assets/logo-text.png", import.meta.url).href;
+
 function Nav() {
   return (
     <header className="border-b border-slate-100 bg-white container mx-auto sticky top-0 z-50">
       <div className="flex min-h-16 flex-wrap items-center justify-between px-4 md:px-0 ">
         <button className=" sm:w-30absolute  sm:hidden  rounded-lg hover:bg-gray-200 ">
           <img
-            src="../../ui/hamburger.png"
+            src={hamBurger}
             alt=""
             className="h-auto w-8 sm:w-30absolute  sm:hidden rounded-lg hover:bg-gray-200 "
           />
         </button>
 
-        <img
-          src="/src/assets/logo-text.png"
-          alt=""
-          className="h-auto w-28 sm:w-30"
-        />
+        <img src={logoText} alt="" className="h-auto w-28 sm:w-30" />
 
         <nav className="order-3 w-full sm:order-2 sm:w-auto">
           <ul className="sm:flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-600 sm:gap-x-7 hidden">

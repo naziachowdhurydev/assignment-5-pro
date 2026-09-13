@@ -1,3 +1,5 @@
+const bannerStack = new URL("../assets/banner-stack.png", import.meta.url).href;
+
 const Banner = () => {
   return (
     <section
@@ -40,8 +42,8 @@ const Banner = () => {
 
         <div className="flex justify-center lg:justify-end">
           <img
-            src="/src/assets/banner-stack.png"
-            alt="A colorful illustration of a modern development stack"
+            src={bannerStack}
+            alt="#"
             className="h-auto w-full max-w-md object-contain sm:max-w-lg"
           />
         </div>
