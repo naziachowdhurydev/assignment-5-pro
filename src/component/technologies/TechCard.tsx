@@ -60,7 +60,10 @@ const TechCard = ({
               </div>
 
               <button
-                onClick={() => handleAddToStack(tech)}
+                onClick={() => {
+                  setSelectedTechnologies((prev) => [...prev, tech]);
+                  handleAddToStack(tech);
+                }}
                 disabled={isStack.includes(tech.id)}
                 type="button"
                 className="mt-5 w-full rounded-xl bg-slate-950 px-4 py-3 text-base font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950 disabled:cursor-not-allowed disabled:bg-slate-400 disabled:text-slate-200"

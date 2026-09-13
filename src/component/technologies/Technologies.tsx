@@ -6,12 +6,12 @@ interface TechnologiesProps {
   technologiesPromise: Promise<Itechnology[]>;
 }
 
-const [selectedTechnologies, setSelectedTechnologies] = useState<Itechnology[]>(
-  [],
-);
-
 const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
   const technologies = use(technologiesPromise);
+
+  const [selectedTechnologies, setSelectedTechnologies] = useState<
+    Itechnology[]
+  >([]);
 
   // console.log(technologies, "Technologies:");
   return (
