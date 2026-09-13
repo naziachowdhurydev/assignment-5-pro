@@ -83,6 +83,12 @@ const AvailableTech = ({
             </div>
           </>
         )}
+        <button
+          onClick={() => setSelectedTechnologies([])}
+          className="mt-8 w-full rounded-lg border border-red-300 py-2 text-sm font-semibold text-red-500 transition hover:bg-red-50"
+        >
+          Remove All
+        </button>
       </aside>
     </div>
   );
