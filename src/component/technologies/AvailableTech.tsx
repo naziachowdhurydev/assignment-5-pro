@@ -1,10 +1,25 @@
+import React from "react";
 import { Itechnology } from "../../types/technologyType";
 import TechCard from "./TechCard";
 
-const AvailableTech = ({ technologies }: { technologies: Itechnology[] }) => {
+interface IAvailableTechProps {
+  technologies: Itechnology[];
+  selectedTechnologies: Itechnology[];
+  setSelectedTechnologies: React.Dispatch<React.SetStateAction<Itechnology[]>>;
+}
+
+const AvailableTech = ({
+  technologies,
+  selectedTechnologies,
+  setSelectedTechnologies,
+}: IAvailableTechProps) => {
   return (
     <div className="mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(250px,1fr)]">
-      <TechCard technologies={technologies} />
+      <TechCard
+        technologies={technologies}
+        selectedTechnologies={selectedTechnologies}
+        setSelectedTechnologies={setSelectedTechnologies}
+      />
 
       <aside className="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_4px_14px_rgba(15,23,42,0.04)] lg:sticky lg:top-6">
         <h3 className="text-xl font-bold tracking-tight text-slate-900">

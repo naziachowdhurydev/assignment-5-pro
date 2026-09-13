@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import { Itechnology } from "../../types/technologyType";
 import { toast } from "react-toastify";
 
-const TechCard = ({ technologies }: { technologies: Itechnology[] }) => {
+const TechCard = ({
+  technologies,
+  selectedTechnologies,
+  setSelectedTechnologies,
+}: {
+  technologies: Itechnology[];
+  selectedTechnologies: Itechnology[];
+  setSelectedTechnologies: React.Dispatch<React.SetStateAction<Itechnology[]>>;
+}) => {
   const [isStack, setIsStack] = useState<string[]>([]);
 
   const handleAddToStack = (tech: Itechnology) => {

@@ -1,10 +1,14 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Itechnology } from "../../types/technologyType";
 import AvailableTech from "./AvailableTech";
 
 interface TechnologiesProps {
   technologiesPromise: Promise<Itechnology[]>;
 }
+
+const [selectedTechnologies, setSelectedTechnologies] = useState<Itechnology[]>(
+  [],
+);
 
 const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
   const technologies = use(technologiesPromise);
@@ -21,7 +25,11 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
         </p>
       </div>
 
-      <AvailableTech technologies={technologies} />
+      <AvailableTech
+        technologies={technologies}
+        selectedTechnologies={selectedTechnologies}
+        setSelectedTechnologies={setSelectedTechnologies}
+      />
     </div>
   );
 };
