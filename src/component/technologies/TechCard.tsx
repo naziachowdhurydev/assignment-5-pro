@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { Itechnology } from "../../types/technologyType";
+import { toast } from "react-toastify";
 
 const TechCard = ({ technologies }: { technologies: Itechnology[] }) => {
   const [isStack, setIsStack] = useState<string[]>([]);
+
+  const handleAddToStack = (tech: Itechnology) => {
+    setIsStack((prev) => [...prev, tech.id]);
+
+    toast.success(`${tech.name} added to your stack!`);
+  };
 
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
@@ -45,14 +52,12 @@ const TechCard = ({ technologies }: { technologies: Itechnology[] }) => {
               </div>
 
               <button
-                onClick={() => setIsStack([...isStack, tech.id])}
+                onClick={() => handleAddToStack(tech)}
                 disabled={isStack.includes(tech.id)}
                 type="button"
                 className="mt-5 w-full rounded-xl bg-slate-950 px-4 py-3 text-base font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950 disabled:cursor-not-allowed disabled:bg-slate-400 disabled:text-slate-200"
               >
-                {isStack.includes(tech.id)
-                  ? "your Stack addeds"
-                  : "Add to Stack"}
+                {isStack.includes(tech.id) ? "Added to Stack" : "Add to Stack"}
               </button>
             </div>
           </div>
