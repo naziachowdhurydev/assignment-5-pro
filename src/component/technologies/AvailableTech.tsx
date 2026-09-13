@@ -14,9 +14,10 @@ const AvailableTech = ({
   setSelectedTechnologies,
 }: IAvailableTechProps) => {
   const removeTechnology = (id: string) => {
-    setSelectedTechnologies((prev) =>
-      prev.filter((technology) => technology.id !== id),
+    const restTechnologies = selectedTechnologies.filter(
+      (technology) => technology.id !== id,
     );
+    setSelectedTechnologies(restTechnologies);
   };
   return (
     <div className="mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(250px,1fr)]">

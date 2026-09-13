@@ -11,9 +11,10 @@ const SelectedTechnologies = ({
   setSelectedTechnologies,
 }: ISelectedTechnologiesProps) => {
   const removeTechnology = (id: string) => {
-    setSelectedTechnologies((prev) =>
-      prev.filter((technology) => technology.id !== id),
+    const restTechnologies = selectedTechnologies.filter(
+      (technology) => technology.id !== id,
     );
+    setSelectedTechnologies(restTechnologies);
   };
 
   return (

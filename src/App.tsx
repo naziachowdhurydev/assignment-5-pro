@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import Nav from "./component/nav.tsx";
 import Banner from "./component/banner.tsx";
 import Footer from "./component/footer.tsx";
@@ -13,7 +13,9 @@ const technologiesFetch = async (): Promise<Itechnology[]> => {
 
 function App() {
   // console.log("technologiesFetch", technologiesFetch);
-  const technologiesPromise = technologiesFetch();
+  // const technologiesPromise = technologiesFetch();
+
+  const [technologiesPromise] = useState(technologiesFetch());
   return (
     <div>
       <Nav />
