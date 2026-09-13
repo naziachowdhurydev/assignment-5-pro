@@ -1,6 +1,7 @@
 import React from "react";
 import { Itechnology } from "../../types/technologyType";
 import TechCard from "./TechCard";
+import { toast } from "react-toastify";
 
 interface IAvailableTechProps {
   technologies: Itechnology[];
@@ -84,7 +85,10 @@ const AvailableTech = ({
           </>
         )}
         <button
-          onClick={() => setSelectedTechnologies([])}
+          onClick={() => {
+            setSelectedTechnologies([]);
+            toast.success("All technologies removed from your stack!");
+          }}
           className="mt-8 w-full rounded-lg border border-red-300 py-2 text-sm font-semibold text-red-500 transition hover:bg-red-50"
         >
           Remove All

@@ -24,7 +24,11 @@ const TechCard = ({
       {technologies.map((tech: Itechnology) => (
         <article
           key={tech.id}
-          className="flex min-h-87.5 flex-col rounded-2xl border border-slate-100 bg-white p-6 transition duration-200"
+          className={`flex min-h-87.5 flex-col rounded-2xl border bg-white p-6 transition duration-200 ${
+            selectedTechnologies.some((technology) => technology.id === tech.id)
+              ? "border-red-500"
+              : "border-slate-100"
+          }`}
         >
           <div className="flex items-start justify-between gap-4">
             <img
@@ -68,7 +72,13 @@ const TechCard = ({
                   (technology) => technology.id === tech.id,
                 )}
                 type="button"
-                className="mt-5 w-full rounded-xl bg-slate-950 px-4 py-3 text-base font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950 disabled:cursor-not-allowed disabled:bg-slate-600 disabled:text-slate-200"
+                className={`mt-5 w-full rounded-xl bg-slate-950 px-4 py-3 text-base font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950 disabled:cursor-not-allowed disabled:bg-slate-600 disabled:text-slate-200 ${
+                  selectedTechnologies.some(
+                    (technology) => technology.id === tech.id,
+                  )
+                    ? "border-red-500"
+                    : "border-slate-100"
+                }`}
               >
                 {selectedTechnologies.some(
                   (technology) => technology.id === tech.id,
