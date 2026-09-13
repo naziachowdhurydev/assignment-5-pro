@@ -1,6 +1,6 @@
 function Nav() {
   return (
-    <header className="border-b border-slate-100 bg-white container mx-auto">
+    <header className="border-b border-slate-100 bg-white container mx-auto sticky top-0 z-50">
       <div className="flex min-h-16 flex-wrap items-center justify-between px-4 md:px-0 ">
         <button className=" sm:w-30absolute  sm:hidden  rounded-lg hover:bg-gray-200 ">
           <img
